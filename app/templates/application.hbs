@@ -1,3 +1,14 @@
-{{page-title "FrontendGroup6AiHelpMeIpdc"}}
+{{page-title "Help me IPDC"}}
 
-{{outlet}}
+<AuApp>
+  <AuMainHeader @brandLink="https://www.vlaanderen.be/nl" @homeRoute="application" @appTitle="Say editor test" @contactRoute="application">
+    <AuButton @skin="link" @icon="login">
+      Aanmelden
+    </AuButton>
+  </AuMainHeader>
+  <AuMainContainer as |m|>
+    <m.content @scroll={{true}}>
+      {{outlet}}
+    </m.content>
+  </AuMainContainer>
+</AuApp>
