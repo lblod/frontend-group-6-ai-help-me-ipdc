@@ -9,6 +9,6 @@ export default class PublicServicesListComponent extends Component {
 
   @action
   showService(service) {
-    console.log(service.title);
+    console.log(service);
   }
 }
