@@ -30,23 +30,31 @@
         @currentSorting={{this.sort}}
         @label="AI enhanced Procedures" @class="data-table__header-title"
       />
+      <AuDataTableThSortable
+        @field="description"
+        @currentSorting={{this.sort}}
+        @label="Save Adjustments" @class="data-table__header-title"
+      />
     </c.header>
     <c.body as |row|>
       <td>{{row.title}}</td>
       <td>{{#each row.requirements as |req|}}
         {{{req.description}}}
-        <AuHr />
+        <AuHr/>
       {{/each}}
       </td>
       <td>{{#each row.procedures as |procedure|}}
         {{{procedure.description}}}
-        <AuHr />
+        <AuHr/>
       {{/each}}
       </td>
       <td>{{#each row.generatedProcedures as |procedure|}}
         {{{procedure.description}}}
-        <AuHr />
+        <AuHr/>
       {{/each}}
+      </td>
+      <td>
+        <AuButton>Update</AuButton>
       </td>
     </c.body>
   </t.content>

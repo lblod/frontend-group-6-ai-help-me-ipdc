@@ -18,12 +18,17 @@
                     @currentSorting={{this.sort}}
                     @label="Omschrijving" @class="data-table__header-title"
             />
+            <AuDataTableThSortable
+                    @field="description"
+                    @currentSorting={{this.sort}}
+                    @label="Welke stappen" @class="data-table__header-title"
+            />
         </c.header>
         <c.body as |row|>
             <td>{{row.title}}</td>
             <td>{{{row.description}}}</td>
 
-            <td><AuLink @route="public-service-details" @skin="primary"> Welke stappen?</AuLink></td>
+            <td><AuLink @route="public-service-details" @skin="primary">Wat te doen bij/voor {{row.title}}?</AuLink></td>
         </c.body>
     </t.content>
 </AuDataTable>
