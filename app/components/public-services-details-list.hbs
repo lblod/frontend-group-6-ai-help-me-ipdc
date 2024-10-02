@@ -1,0 +1,59 @@
+<AuDataTable
+  @content={{@content}}
+  @page={{this.page}}
+  @fields="title description"
+  @noDataMessage="Geen documenten"
+  @sort={{this.sort}}
+  as |t|
+>
+  <t.content as |c|>
+    <c.header>
+      <AuDataTableThSortable
+        @field="title"
+        @currentSorting={{this.sort}}
+        @label="Publieke Service" @class="data-table__header-title"
+      />
+      <AuDataTableThSortable
+        @field="description"
+        @currentSorting={{this.sort}}
+        @label="Vereisten" @class="data-table__header-title"
+      />
+      <AuDataTableThSortable
+        @field="description"
+        @currentSorting={{this.sort}}
+        @label="Procedures" @class="data-table__header-title"
+      />
+      <AuDataTableThSortable
+        @field="description"
+        @currentSorting={{this.sort}}
+        @label="AI enhanced Procedures" @class="data-table__header-title"
+      />
+    </c.header>
+    <c.body as |row|>
+      <td>{{row.title}}</td>
+      <td>{{#each row.requirements as |req|}}
+        {{{req.description}}}
+        <AuHr/>
+      {{/each}}
+      </td>
+      <td>{{#each row.procedures as |procedure|}}
+        {{{procedure.description}}}
+        <AuHr/>
+      {{/each}}
+      </td>
+      <td>{{#each row.generatedProcedures as |procedure|}}
+        <form>
+          <AuTextarea
+            value={{procedure.description}}
+            id="input"
+          />
+        </form>
+
+        <br/>
+        <button type="button" {{on 'click' (fn this.handleChange procedure) }}>Save adjustments</button>
+        <AuHr/>
+      {{/each}}
+      </td>
+    </c.body>
+  </t.content>
+</AuDataTable>

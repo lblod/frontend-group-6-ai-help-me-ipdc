@@ -1,63 +1,7 @@
 {{page-title "PublicServiceDetails"}}
 
-<AuDataTable
+<PublicServicesDetailsList
   @content={{@model}}
-  @page={{this.page}}
-  @fields="title description"
-  @noDataMessage="Geen documenten"
-  @sort={{this.sort}}
-  as |t|
->
-  <t.content as |c|>
-    <c.header>
-      <AuDataTableThSortable
-        @field="title"
-        @currentSorting={{this.sort}}
-        @label="Publieke Service" @class="data-table__header-title"
-      />
-      <AuDataTableThSortable
-        @field="description"
-        @currentSorting={{this.sort}}
-        @label="Vereisten" @class="data-table__header-title"
-      />
-      <AuDataTableThSortable
-        @field="description"
-        @currentSorting={{this.sort}}
-        @label="Procedures" @class="data-table__header-title"
-      />
-      <AuDataTableThSortable
-        @field="description"
-        @currentSorting={{this.sort}}
-        @label="AI enhanced Procedures" @class="data-table__header-title"
-      />
-      <AuDataTableThSortable
-        @field="description"
-        @currentSorting={{this.sort}}
-        @label="Save Adjustments" @class="data-table__header-title"
-      />
-    </c.header>
-    <c.body as |row|>
-      <td>{{row.title}}</td>
-      <td>{{#each row.requirements as |req|}}
-        {{{req.description}}}
-        <AuHr/>
-      {{/each}}
-      </td>
-      <td>{{#each row.procedures as |procedure|}}
-        {{{procedure.description}}}
-        <AuHr/>
-      {{/each}}
-      </td>
-      <td>{{#each row.generatedProcedures as |procedure|}}
-        {{{procedure.description}}}
-        <AuHr/>
-      {{/each}}
-      </td>
-      <td>
-        <AuButton>Update</AuButton>
-      </td>
-    </c.body>
-  </t.content>
-</AuDataTable>
+/>
 
 {{outlet}}
