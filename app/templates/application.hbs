@@ -6,9 +6,28 @@
       Aanmelden
     </AuButton>
   </AuMainHeader>
+  <AuContentHeader @titlePartOne="Vlaanderen" @titlePartTwo="is lokaal bestuur">
+    <img sizes="50vw" src="https://media.bizj.us/view/img/6487132/thinkstockphotos-178598388*1200xx2122-1196-0-0.jpg" alt="Group toejuichende mensen">
+  </AuContentHeader>
   <AuMainContainer as |m|>
     <m.content @scroll={{true}}>
       {{outlet}}
     </m.content>
   </AuMainContainer>
+  <AuMainFooter>
+    <AuHeading @level="3" @skin="4">
+      Deze website baseert zich op <a class="au-c-link" href="https://productencatalogus-v3.vlaanderen.be/nl/start">de Interbestuurlijke producten- en dienstencatalogus</a> en <a class="au-c-link" href="https://github.com/semantic-ai/">geavanceerde AI technieken</a> om je optimaal te ondersteunen 🤖.
+    </AuHeading>
+    <AuContent @skin="small">
+      <p>Uitgegeven door <a class="au-c-link" href="https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-kanselarij-en-bestuur/agentschap-binnenlands-bestuur">Agentschap Binnenlands Bestuur</a></p>
+      <ul class="au-c-list-horizontal">
+        <li class="au-c-list-horizontal__item">
+          <AuLink @route="index" @skin="secondary">Disclaimer</AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <AuLink @route="index" @skin="secondary">Cookieverklaring</AuLink>
+        </li>
+      </ul>
+    </AuContent>
+  </AuMainFooter>
 </AuApp>
